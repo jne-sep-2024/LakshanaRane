@@ -1,0 +1,30 @@
+.parent{
+    padding: 10px;
+    background-color: aliceblue;
+    position: relative;
+    height: 200vh;
+
+}
+
+.child-one{
+    background-color: brown;
+    padding :10px;
+    position: sticky;
+    top: 10px;
+    /* position: relative;
+    left: 10px; */
+    /* position: fixed; */
+    top: 0;
+    right: 0;
+
+}
+.child-two{
+    background-color: blanchedalmond;
+    padding :10px;
+    
+}
+.child-three{
+    background-color: gray;
+    padding :10px;
+   
+}
