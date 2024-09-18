@@ -1,7 +1,5 @@
 
 
-
-
 /* An idea about the concept->
  *
  * async function MyFun() {
@@ -54,6 +52,8 @@ main1();
  * 
  */
 
+//----------------------------------------***---------------------------------------//
+
 //CREATING PROMISES//
 
 /*
@@ -82,46 +82,47 @@ function getUsers() {
     }, 1000);
     return users;
   }
-  
+
+  /* -------------------------------------***--------------------------------------------*/
+
+function makeRequest(location){
+    return new Promise((resolve, reject) => {
+        console.log(`Making request to  ${location}`)
+        if(location==='Google'){
+            resolve('Google says hi');
+        }else{
+            reject('We can Only talk to google');
+        }
+    });
+}
 
 
-//example-->
-
-// let success= true;
-let success=false;
-
-
-function getUsers(){
+  function  processRequest(response){
     return new Promise((resolve, reject)=>{
-        setTimeout(() => {
-            if(success){
-                resolve(
-                    [
-                    {username:'john',email:'john@test.com'},
-                    {username:'jane',email:'jane@mail.com'},
-                    ]
-            );
-            }else{
-                reject('Failed to user list');
-            }
-            
-        }, 2000);
+        console.log('processing response ...');
+        resolve(`extra info: + ${response}`)
     })
 }
 
-// function onFullfilled(users){
-//     console.log(users);
-// }
-// function onRejected(error){
-//     console.log(error);
-// }
 
-const promise=getUsers();
+makeRequest('Google').then(response=>{
+    console.log('response  received');
+    return processRequest(response);
+}).then(processResponse=>{
+    console.assert.toString(processResponse)
+}).catch(err=>{
+    console.log(err);
+})
 
-// promise.then(onFullfilled,onRejected);
 
-promise.catch((error)=>{
-    console.log(error);
-});
+/*As sooon as we write await , it will leave this for execution and carry on another tasks and then 
+when this will be executed(resolved) then it will let us know by resolve/reject value msg*/
+async function doWork() {
+    const response= await makeRequest('Google');   
+    console.log('response recieved...')     // his will executed when await returns resolve or reject
+    const processedRespnse= await processRequest(response);
+    console.log(processedRespnse);
+}
 
-// resolve hua to o/p dega , reject hua to atch m jake error display karega!
+doWork();
+  
