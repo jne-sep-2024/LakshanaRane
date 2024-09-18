@@ -41,3 +41,22 @@ let back=Boolean(statusString);
 //comparng string
 let result = 'a' < 'b';
 console.log(result); // true
+
+//string practice
+console.log('................................................................');
+
+
+let myStr1= new String('hello');
+let myStr2='hello';
+let myStr3= new String('hello');
+
+// '==' ye value ko coerse krne ki koshish karta h check karta h values same h ya nahi to true retuen karegea
+//loose equals
+
+console.log('result-1 for ==')
+console.log(myStr1==myStr2);        //true      -->== try karega ki myStr1 ko primitive m convert marke value check kare
+console.log(myStr1==myStr3);        //false  --> isme dono instances alag h so isiliye false
+
+console.log('result-2 for ===')
+console.log(myStr1===myStr2);   //false        --> isme ek object ka istnace h aur ek primitive string h so strictly not equals
+console.log(myStr1===myStr3);   //false      --> isme dono instances alag h so isiliye false

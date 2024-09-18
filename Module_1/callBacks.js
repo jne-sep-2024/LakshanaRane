@@ -34,6 +34,7 @@ console.log(multiplyResult);
 
 //arrayCallBack fucntions//
 const a=[3,-5,5,3,42,-6,-2,0];
+
 const firstNegitiveNumber=(num)=>{
     return num<0;
 } 
