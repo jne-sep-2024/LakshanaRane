@@ -42,12 +42,7 @@ items.forEach((item)=>{
          console.log(item.price);   
 })
 
-//some()
-const hasInexpesiveThings=items.some((item)=>{
-    return item.price>1000;
-});
 
-console.log('inexpesive things: ' + hasInexpesiveThings);
 
 
 //reduce
@@ -62,3 +57,54 @@ console.log(total);
 const numArr=[2,3,4,5,6]
 const includestwo= numArr.includes(2);
 console.log(includestwo)
+
+
+//some()
+const hasInexpesiveThings=items.some((item)=>{
+    return item.price>1000;
+});
+
+console.log('inexpesive things: ' + hasInexpesiveThings);
+
+//every()
+
+const person=[
+    {
+        name:'laksh',
+        age:23
+    },
+    {
+        name:'pooja',
+        age:24
+    },
+    {
+        name:'madhu',
+        age:15
+    },
+
+    {
+        name:'anuja',
+        age:18
+    },
+    {
+        name:'nandu',
+        age:24
+    },
+
+]
+
+// console.log(person);
+
+const personAGe=person.some((a)=>{
+    return (a.age>=18);
+})
+console.log(personAGe);
+
+//every()
+
+const personAge=person.every((a)=>{
+    return (a.age<=18);
+})
+console.log(personAge);
+
+

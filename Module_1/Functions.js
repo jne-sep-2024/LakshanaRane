@@ -89,15 +89,30 @@ let person={
 
 //Arrow Functions
 
-
+//ex1
 let show=()=>
 {
     console.log('thinkitive');
 }
 
+//ex2
 let add1=(a,b)=>  a+b;
 
 console.log(add1(10,20));
+
+
+// ex-3
+function Counter() {
+    this.count = 0;
+    
+    setInterval(() => {
+      this.count++;
+      console.log(this.count);
+    }, 1000);
+  }
+  
+  const myCounter = new Counter(); // Prints incrementing count every second
+  
 
 //Pass by Value;
 

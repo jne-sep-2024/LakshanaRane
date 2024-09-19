@@ -68,14 +68,57 @@ Promise.all([
    recordVedioThree
 ]).then((messages)=>{
   console.log(messages);
-})
+});
+
+//example 2:
+const fetchUser = fetch('https://api.example.com/user');
+const fetchPosts= fetch('https://api.example.com/posts');
+const fetchComments= fetch('https://api.example.com/comments');
+
+Promise.all([fetchUser,fetchPosts,fetchComments])
+.then(response=>Promise.all(response.map(res=>res.json())))
+.then(data=>
+  {const [user,post,comment]=data;
+
+    console.log('users:' + user);
+    console.log('Posts: ' + post);
+    console.log('Comments: '+  comment);
+  })
+  .catch(error=>{
+    console.log('error: ' + error);
+  })
+
+
 
 /*
-
+Only when all responses are successfully converted to JSON objects, we proceed to the next .then() block.
 all-> it will send an array of all of the sucessfull meassages 
 race->directly print for the first opeartion completed/resolved without waiting for everone to complete
 
 */
+
+//exmaple -2 for promise.allSetteled()->
+// If you want all promises to run and get their results, whether they succeed or fail. You don't want the entire operation to fail just because one promise did.
+// Cases where partial success is acceptable, such as uploading multiple files or sending multiple requests where some might fail but others can succeed.
+
+/*const uploadFile1 = uploadFile(file1);  // Assume uploadFile() is a function that returns a Promise
+const uploadFile2 = uploadFile(file2);
+const uploadFile3 = uploadFile(file3);
+
+Promise.allSettled([uploadFile1, uploadFile2, uploadFile3])
+  .then(results => {
+    results.forEach((result, index) => {
+      if (result.status === 'fulfilled') {
+        console.log(`File ${index + 1} uploaded successfully:`, result.value);
+      } else {
+        console.log(`File ${index + 1} failed to upload:`, result.reason);
+      }
+    });
+  });
+*/
+
+
+//promise.race-> jab saare promises k resolve hone ka wait kiye bina jo resolve ho gye wo display krna ho 
 
 Promise.race([
   recordVedioOne,
