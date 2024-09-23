@@ -41,7 +41,7 @@ getFullName.apply(name2, ["Mumbai", "Maharashtra"]);
 //bind
 let printGetFullName= getFullName.bind(name2,"Kolkata","WestBengal"); 
 //this will return the new method jisme name2 wale object ke sath getFullName method bind hoke aayega
-//hum ye baad me call kar akte hai, directly call nahi hota ai ,, pehle bind hoga fir call hoag
+//hum ye baad me call kar akte hai, directly call nahi hota ai ,, pehle bind hoga fir call hoga
 console.log(printGetFullName);
 printGetFullName()
 

@@ -1,26 +1,36 @@
-/*Hoisting ka matlab hai ki JavaScript apne code ko execute karne se pehle, 
- variable aur function declarations ko automatically upar le jaata hai.
- */
+// /*Hoisting ka matlab hai ki JavaScript apne code ko execute karne se pehle, 
+//  variable aur function declarations ko automatically upar le jaata hai.
+//  */
 
-//1)variable hoisting
+// //1)variable hoisting
 
-console.log(a);
-var a=0;        //undefined
+// console.log(a);
+// var a=0;        //undefined
  
 
-console.log(myletVaribale);
-let myletVaribale='this is let variable';
+// console.log(myletVaribale);
+// let myletVaribale='this is let variable';
 
 
-// let aur const ke sath, hoisting ke bawajood, variables ko unki declaration ke
-//  pehle access nahi kiya ja sakta. Ye time period ko "Temporal Dead Zone" kehte hain.
+// // let aur const ke sath, hoisting ke bawajood, variables ko unki declaration ke
+// //  pehle access nahi kiya ja sakta. Ye time period ko "Temporal Dead Zone" kehte hain.
 
 
-//2)function hoisting
+// //2)function hoisting
 
  
-sayHello();  // Output: Hello, world!
+// sayHello();  // Output: Hello, world!
 
-function sayHello() {
-  console.log('Hello, world!');
+// function sayHello() {
+//   console.log('Hello, world!');
+// }
+
+
+let constantVariable=30;
+
+function newFun(){
+  constantVariable=45;    
+  console.log(constantVariable)     //ye print nahi hoaga
 }
+
+console.log(constantVariable)       //e bhi 30 print hoga
