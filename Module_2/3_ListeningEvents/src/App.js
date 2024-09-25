@@ -1,8 +1,9 @@
 // import logo from "./logo.svg";
 import React from "react";
 import "./App.css";
-// import ExpenseItem from "./components/ExpenseItem";
+
 import Expenses from "./components/Expenses.js";
+import NewExpense from "./components/NewExpense.js";
 function App() {
 
 
@@ -26,12 +27,21 @@ function App() {
       date: new Date(2024, 5, 13),
     },
   ];
+
+  const addExpenseHandler=expense=>{
+    console.log('In App.js');
+    console.log(expenses);
+  }
+
   return (
     <div>
-      <h2>Let's Get started</h2>
+      {/* <h2>Let's Get started</h2> */}
+      <NewExpense onAddExpenseHandler={addExpenseHandler}/>
      <Expenses items={expenses}/>
     </div>
   );
 }
 
 export default App;
+
+//this is app.js
