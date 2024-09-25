@@ -1,0 +1,39 @@
+.expense-filter {
+    width: 80%;
+    color: #fff;
+    padding: 1rem;
+    background-color: #4b4b4b;
+    border-radius: 12px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+    margin: 1rem 0;
+}
+
+.expense-filter__control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.expense-filter__control label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.expense-filter__control select {
+    font: inherit;
+    padding: 0.5rem 1rem;
+    font-weight: bold;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    color: #333;
+    cursor: pointer;
+}
+
+.expense-filter__control select:focus {
+    outline: none;
+    border-color: #4b4b4b;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
