@@ -1,4 +1,5 @@
 const ResultTable = (props) => {
+  console.log({props})
   return (
     <table className="result">
       <thead>
@@ -11,12 +12,14 @@ const ResultTable = (props) => {
         </tr>
       </thead>
       <tbody>
-        {props.data.map((yearData) => (
+        {props.data.map((yearData) =>{
+          console.log("initialInvestment",props.initialInvestment)
+
+        return (
           <tr key={yearData.year}>
             <td>{yearData.year}</td>
             {/* total savings of the year */}
 
-            <td>{yearData.yearlyInterest}</td>
             {/* total interest gained in a year */}
 
             <td>
@@ -25,13 +28,21 @@ const ResultTable = (props) => {
                 (yearData.yearlyContribution * yearData.year)}
             </td>
 
+                <td>{yearData.yearlyInterest}</td>
               {/* total invested capital */}
             <td>
               {props.initialInvestment +
                 yearData.yearlyContribution * yearData.year}
             </td>
+            <td>
+              {props.initialInvestment +
+                yearData.yearlyContribution * yearData.year}
+            </td>
           </tr>
-        ))}
+        )
+      }
+      )
+        }
       </tbody>
     </table>
   );
