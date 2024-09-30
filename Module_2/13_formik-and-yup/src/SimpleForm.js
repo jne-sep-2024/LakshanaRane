@@ -14,21 +14,32 @@ const schema = Yup.object({
     .required("age can not be empty")
     .min(18, "Age must be 18 or greater than 18"),
     password: Yup.string().min(4).required('Please enter password'),
-    cpassword:Yup.string().oneOf([Yup.ref("password")]).required("Password does not matched")
-
+    cpassword:Yup.string().oneOf([Yup.ref("password")]).required("Password does not matched"),
+    
 
 });
-const onSubmitHandler=(values)=>{
-  console.log("submitted");
-  console.log("Form values: ", values);
-} ;
 
 const SimpleForm = () => {
+  
+  
+  
   const formik = useFormik({
     initialValues: { name: "", email: "", age: "" ,password:'', cpassword:''},
     validationSchema: schema,
     onSubmit:  onSubmitHandler,
   });
+  
+  
+  const onSubmitHandler=(values)=>{
+    console.log("submitted");
+    console.log("errors: ",formik.errors)
+    console.log("Form values: ", values);
+  } ;
+
+
+
+
+
   return (
     <div>
       <h1> Simple form using Formik and Yup</h1>
@@ -43,7 +54,7 @@ const SimpleForm = () => {
           onBlur={formik.handleBlur}
           value={formik.values.name}
         />
-        {formik.touched.name && formik.errors.name ? (<div>{formik.errors.name}</div>) : null}
+        {formik.touched.name && formik.errors.name ? (<div>{formik.errors.name} </div>) : null}
 
         </div>
         <div>
