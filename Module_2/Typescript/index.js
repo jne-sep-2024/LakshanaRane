@@ -5,3 +5,4 @@ if (age < 50) {
 console.log(age);
 var greetings = "hello laksh";
 console.log(greetings);
+
