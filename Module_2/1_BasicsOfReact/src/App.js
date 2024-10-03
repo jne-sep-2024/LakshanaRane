@@ -1,9 +1,10 @@
 // import logo from "./logo.svg";
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 // import ExpenseItem from "./components/ExpenseItem";
 import Expenses from "./components/Expenses.js";
 function App() {
+
 
 
   const expenses = [
@@ -30,6 +31,8 @@ function App() {
     <div>
       <h2>Let's Get started</h2>
      <Expenses items={expenses}/>
+     
+     
     </div>
   );
 }
