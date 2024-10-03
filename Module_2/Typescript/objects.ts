@@ -4,9 +4,15 @@ const user={
     isActive: true
 }
 
-function createUser(name: string,isPaid:boolean){
+function createUser(user :{name: string,email:string,isActive:boolean}):void{
 
+    console.log(`${user.name} is my name with email: ${user.email} with isactive status:${user.isActive}`);
 }
+
+//  createUser({'lakshana','laksh@mail.com',true});
+
+
+
 // createUser({name:"laksh",isPaid:true}); 
 
 
