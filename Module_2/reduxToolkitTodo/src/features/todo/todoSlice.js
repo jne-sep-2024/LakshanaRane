@@ -21,7 +21,7 @@ export const todoSlice = createSlice({
         text: action.payload, //you can take the text value from action->payload
       };
 
-      console.log("my",todo)
+      console.log("my todo:",todo)
 
       state.todos.push(todo); //humare "todos" array m humne "todo" ka ek object push kardiya
       console.log("state.todos",state.todos);

@@ -5,7 +5,7 @@ import { removeTodo } from "../features/todo/todoSlice";
 // import './Todos.css';
 
 const Todos = () => {
-  const todos = useSelector(state => state.todos); //state k andar jo pura store h waha se koi bhi value aap nikla sakte h
+  const todos = useSelector(state => state.todos); //state k andar jo pura store h waha se koi bhi value aap nikal sakte h
   const dispatch = useDispatch();
 
   console.log("todos",todos);
