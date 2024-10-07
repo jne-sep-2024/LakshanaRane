@@ -28,16 +28,22 @@ export const todoSlice = createSlice({
     },
 
       updateTodos: (state, action) => {
-        console.log("updating todosList");
+        console.log("Updating todo....");
+        //we are destructuring the data from the incoming object inside action.payload
+        const {id, text}=action.payload;
+
+        //first find the todo with id is found or not;and take that object into a variable
+        const todoItemToUpdate = state.todosList.find(
+          (todoItemFound) => todoItemFound.id === id
+        );
+        
+        if(todoItemToUpdate){
+          todoItemToUpdate.text=text;
+        }
+        
+      }
        
-        const newTodo=action.payload;
-        state.todosList.find((todoItem)=>{
-          if(todoItem.id===action.payload){
-            todoItem.text=newTodo;
-            
-          }
-        })
-      },
+      
   },
 });
 

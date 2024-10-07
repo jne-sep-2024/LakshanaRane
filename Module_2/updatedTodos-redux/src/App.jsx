@@ -9,7 +9,7 @@ function App() {
     <>
     <h1>React-Redux</h1>
      <h3>Todos App </h3>
-        <AddTodo/>
+      
         <TodosList/>
     </>
   )
