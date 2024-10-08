@@ -90,20 +90,20 @@ consumePromiseFive();
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// async function getAllUsers() {
-//   try {
-//     //    fetch func^ time leta h thoda-> so await karao usko
-//     const response = await fetch("https://jsonplaceholder.typicode.com/users");
+async function getAllUsers() {
+  try {
+    //    fetch func^ time leta h thoda-> so await karao usko
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
 
-//     //  ab conversion bhi time lega thoda to isko bhi await karana padega
-//     const data = await response.json();
-//     console.log(data);
-//   } catch (error) {
-//     console.log("error:", error);
-//   }
-// }
+    //  ab conversion bhi time lega thoda to isko bhi await karana padega
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log("error:", error);
+  }
+}
 
-// getAllUsers();
+getAllUsers();
 
 
 
