@@ -1,5 +1,6 @@
 import './App.css'
 import TodosList from './components/TodosList';
+import demo from './components/demo';
 
 function App() {
 
@@ -9,6 +10,7 @@ function App() {
      <h3>Todos App </h3>
       
         <TodosList/>
+        <demo/>
     </>
   )
 }
