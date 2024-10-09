@@ -20,6 +20,8 @@
     // destructuring
     const person = { name: 'John', age: 25, city: 'New York' };
     const { name, ...details } = person;
+    console.log("person",person );
+    console.log("details",details);
     
     const addHandler2 = () => {
       setArrayState([...arrayState, "Mercedes"]);
@@ -41,7 +43,9 @@
 
     const opHandler=()=>{
       const newOperations=[...operations,"modulus"];
-      console.log(newOperations)
+      console.log(newOperations);
+      const displayElement= document.getElementById("operationDisplay");
+      displayElement.innerHTML=newOperations.join(" ");
     }
     //spread operator in fucntion 
     function sum(a, b, c) {
@@ -50,7 +54,7 @@
     
     const numbers = [1, 2, 3];
     const result = sum(...numbers); 
-
+    console.log("result:",result)
 
     return (
       <div className="App">
@@ -64,8 +68,8 @@
         <button onClick={mutateObject}>+edit object</button>
         
         {console.log("Operations:",operations)}
-        <button onClick={opHandler}>newoperation</button>
-        
+        <button onClick={opHandler}>newoperation</button>  
+        <div id="operationDisplay"></div>      
 
       </div>
     );

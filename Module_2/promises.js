@@ -76,7 +76,7 @@ const promiseFive = new Promise((resolve, reject) => {
   }, 1000);
 });
 
-///////////////////////////////////////////handling promise using async await///////////////////////////////////////////////////////
+///////////////////////////////////////////handling promise using async await////////////////////////////
 async function consumePromiseFive() {
   try {
     const response = await promiseFive;
